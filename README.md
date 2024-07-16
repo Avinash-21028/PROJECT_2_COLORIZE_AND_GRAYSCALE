@@ -103,6 +103,8 @@ The main script that orchestrates the processing of images. It processes all bla
     ```sh
     python scripts/main.py
     ```
+    or run make
+    or run ./run_all.bat
 
 ### Example Workflow
 1. Place black and white images in `data/initial/textures`.
@@ -115,3 +117,18 @@ The main script that orchestrates the processing of images. It processes all bla
 ---
 
 By following these instructions, you should be able to set up and run the image segmentation and edge detection project in Python. The processed images will be saved in the specified output directories, ready for further analysis or use.
+
+TEXTURES
+![texmos3 s512](https://github.com/user-attachments/assets/58cc6b4c-e333-464d-92f9-53407cae1589)
+![texmos3 s512_colorized](https://github.com/user-attachments/assets/ca142120-17ce-4f5b-91ef-c962599456d6)
+![texmos3 s512_edges](https://github.com/user-attachments/assets/7364d490-02df-4baf-81d8-a5d55427c949)
+![texmos3 s512_sobel](https://github.com/user-attachments/assets/0bb8a9f8-91d7-4a72-8bed-73e57676e6c7)
+![texmos3 s512_sobel_horizontal](https://github.com/user-attachments/assets/0b1c488a-1b97-43ef-a992-7956d7d6e6f3)
+![texmos3 s512_sobel_vertical](https://github.com/user-attachments/assets/fe30b511-e7d5-44ac-8274-2959848c06da)
+
+AERIALS
+![2 1 01](https://github.com/user-attachments/assets/623579ac-541a-488b-bdbb-a2ea33f38c00)
+![2 1 01_grayscale](https://github.com/user-attachments/assets/ef26763e-f0c1-4f23-845d-8b3f671e1518)
+![2 1 01_segmented](https://github.com/user-attachments/assets/826a3a3f-2141-4fb0-95e9-b342360f2117)
+
+
