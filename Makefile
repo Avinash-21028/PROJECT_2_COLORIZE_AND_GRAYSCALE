@@ -14,8 +14,36 @@ REQUIREMENTS := requirements.txt
 EXTRACT_SCRIPT := extract.py
 MAIN_SCRIPT := scripts/main.py
 
-# Default target: run extract.py, install requirements, and run main.py
-all: extract install-requirements run-main
+# Directories
+DATA_DIR := data
+TEXTURES_DIR := $(DATA_DIR)/initial/textures
+AERIALS_DIR := $(DATA_DIR)/initial/aerials
+
+# URLs
+TEXTURES_URL := https://sipi.usc.edu/database/textures.tar.gz
+AERIALS_URL := https://sipi.usc.edu/database/aerials.tar.gz
+
+# Files
+TEXTURES_TAR := $(TEXTURES_DIR).tar.gz
+AERIALS_TAR := $(AERIALS_DIR).tar.gz
+
+# Default target: download data, run extract.py, install requirements, and run main.py
+all: download-data extract install-requirements run-main
+
+# Download data
+download-data: $(TEXTURES_DIR) $(AERIALS_DIR)
+
+$(TEXTURES_DIR):
+	mkdir -p $(TEXTURES_DIR)
+	curl -o $(TEXTURES_TAR) $(TEXTURES_URL)
+	tar -xzf $(TEXTURES_TAR) -C $(TEXTURES_DIR)
+	rm $(TEXTURES_TAR)
+
+$(AERIALS_DIR):
+	mkdir -p $(AERIALS_DIR)
+	curl -o $(AERIALS_TAR) $(AERIALS_URL)
+	tar -xzf $(AERIALS_TAR) -C $(AERIALS_DIR)
+	rm $(AERIALS_TAR)
 
 # Run extract.py
 extract:
@@ -34,4 +62,4 @@ clean:
 	@echo "Nothing to clean"
 
 # Phony targets to avoid conflicts with files of the same name
-.PHONY: all extract install-requirements run-main clean
+.PHONY: all download-data extract install-requirements run-main clean
