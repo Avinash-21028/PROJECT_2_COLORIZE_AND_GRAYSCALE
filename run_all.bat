@@ -2,7 +2,7 @@
 setlocal
 
 REM Define directories
-set DATA_DIR=Data
+set DATA_DIR=data
 set TEXTURES_DIR=%DATA_DIR%\textures
 set AERIALS_DIR=%DATA_DIR%\aerials
 
